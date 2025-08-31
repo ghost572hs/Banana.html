@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo Fofinho 💖</title>
+    <style>
+        body {
+            background-color: #ffe6f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #b4005a;
+        }
+        #heart {
+            font-size: 100px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        #heart:hover {
+            transform: scale(1.2);
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #fa002a;
+        }
+    </style>
+</head>
+<body>
+    <h1>💖 Clique no coração! 💖</h1>
+    <div id="heart">❤️</div>
+    <div id="message">Vamos nos divertir! 😄</div>
+
+    <script>
+        const heart = document.getElementById('heart');
+        const message = document.getElementById('message');
+
+        const messages = [
+            "Você é incrível! 🌸",
+            "Sorria, você é especial! 😘",
+            "Você faz meu dia melhor 💕",
+            "Cada clique é um abraço virtual 🤗",
+            "Não consigo parar de pensar em você 😍",
+            "Você merece todo amor do mundo ❤️",
+            "Continue sorrindo, lindo(a)! 🌟"
+        ];
+
+        heart.addEventListener('click', () => {
+            // Escolhe uma mensagem aleatória
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            message.textContent = messages[randomIndex];
+            // Pequena animação
+            heart.style.transform = "scale(1.5)";
+            setTimeout(() => heart.style.transform = "scale(1)", 200);
+        });
+    </script>
+</body>
+</html>
